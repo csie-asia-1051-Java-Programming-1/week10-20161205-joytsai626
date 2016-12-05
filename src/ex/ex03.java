@@ -8,49 +8,49 @@ import java.util.*;
 public class ex03 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-        Scanner scn = new Scanner(System.in);
-        //System.out.println("輸入性名      性別      身高      體重");
-        ArrayList<Integer>dataList = new ArrayList<Integer>();
-        String str = "Y";
-        int i=0 , val=0;
-        boolean flag = false;
-        while(!(str.equals("N")||str.equals("n"))){
-        	System.out.print("input a val");
-        	val = scn.nextInt();
-        	if(dataList.size()==0){
-        		dataList.add(val);
-        	}else if(dataList.size()==1){
-        		if(dataList.get(i)>val){
-        			dataList.add(val);
-        		}else{
-        			dataList.add(0,val);
-        		}
-        	}else{
-        		flag = true;i = 0;
-        		while(flag && i<dataList.size()-1){
-        			dataList.add(0,val);
-        			flag = false;
-        			if(dataList.get(i)>val && dataList.get(i+1)<=val){
-        				flag = false;
-        				dataList.add(i+1,val);
-        			}else{
-        				i++;
-        			}
-        		}
-        	}
-        }
-        showListData(dataList);
-        System.out.print("Continue?");
-        str = scn.next();
+	// TODO Auto-generated method stub
+	Scanner scn=new Scanner(System.in);
+	ArrayList<Integer> dataList=new ArrayList<Integer>();
+	String str="r";
+	int i=0,val=0;
+	boolean flag=false;
+	while(!(str.equals("N"))||!(str.equals("n"))){
+		System.out.print("input a valum");
+		val=scn.nextInt();
+		if(dataList.size()==0){
+			dataList.add(val);
+		}else if(dataList.size()==1){
+				if(dataList.get(0)>val){
+					dataList.add(val);
+				}else{
+					dataList.add(0,val);
+				}
+			}else{
+				flag=true;i=0;
+				while(flag==true && i<dataList.size()-1){
+					if(i==0 &&dataList.get(0)<val){
+						dataList.add(0,val);
+						flag=false;
+					}else{
+						if(dataList.get(i)>val &&dataList.get(i+1)<=val){
+							flag=false;
+							dataList.add(i+1,val);
+						}else{
+							i++;
+						}
+					}
+				}
+			}
+		showListData(dataList);
+		System.out.print("countine?");
+		str=scn.next();
 	}
-
-	private static void showListData(ArrayList list){
-         int size = list.size();
-         for(int i=0;i<size;i++){
-        	 System.out.print(list.get(i)+"\t");
-         }
-         System.out.println( );
-		
+}
+private static void showListData(ArrayList<Integer> list) {
+	int size=list.size();
+	for(int i=0;i<size;i++){
+		System.out.print(list.get(i)+"\t");
 	}
-	}
+	System.out.println();
+}
+}

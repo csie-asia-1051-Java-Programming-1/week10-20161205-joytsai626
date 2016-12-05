@@ -10,6 +10,7 @@ public class ex01 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
        Scanner scn = new Scanner(System.in);
+       System.out.println("請輸入ISBN碼:");
        int data[] = new int[10]; 
        int data1[] = new int[10]; 
        int data2[] = new int[10]; 
@@ -24,9 +25,9 @@ public class ex01 {
     	   }
        }
        if(data2[9] % 11 == 0){
-    	   System.out.println("合法");
+    	   System.out.println("識別碼合法");
        }else{
-    	   System.out.println("不合法");
+    	   System.out.println("識別碼不合法");
        }
 	}
 

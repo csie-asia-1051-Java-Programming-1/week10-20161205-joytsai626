@@ -6,33 +6,18 @@ public class hw02 {
 		// TODO Auto-generated method stub
        Scanner scn = new Scanner(System.in);
        int data[] = new int[4];
-
-       int a = scn.nextInt();
-       int b = scn.nextInt();
-       int c = scn.nextInt();
-       int d = scn.nextInt();
-       
-       if(a != b  && b != c && c != d && a != d){
-    	   System.out.println("R");
-	}else if(a == b&&b == c&&c == d&&d == a){
-		   System.out.println("R");
-	}else if(a == b){
-    	   System.out.println(c+d);
-	}else if(b == c){
-		System.out.println(a+d);
-	}else if(c == d){
-		System.out.println(a+b);
-	}else if(a == d){
-		System.out.println(b+c);
-	}else if(a == b && c == d && a>c){
-		System.out.println(a+b);
-	}else if(a == b && c == d && a<c){
-		System.out.println(c+d);
-	}else if(a == c && b == d && a>b){
-	    System.out.println(a+c);
-	}else if(a == c && b == d && a<b){
-		System.out.println(b+d);
+       for(int i=0;i<4;i++){
+			data[i]=scn.nextInt();
+	}Arrays.sort(data);
+	if(data[0]==data[1]){
+		System.out.print(data[2]+data[3]);
+	}else if(data[1]==data[2]){
+		System.out.print(data[0]+data[3]);
+	}else if(data[2]==data[3]){
+		System.out.print(data[0]+data[1]);
+		//012 013 014 023 024 123 124 234  
+	}else{
+		System.out.print("R");
 	}
 	}
 	}
-
